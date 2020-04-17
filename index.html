@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>RandomQuoter</title>
+    </head>
+    <body>
+        
+        
+        
+        <div class="container">
+            <button onclick="quotation()"> Generate Quote</button>
+            <img id="quotemark" src="https://pluspng.com/img-png/quotation-png-quotation-png-transparent-image-498.png"  alt="">        
+            <div class="quotebox" id="text" ></div>
+            <div class="autor" id="autor"></div>
+                      
+        </div>
+            <h1 id="h1">Who is this guy?</h1>
+        <iframe id="who" src="" frameborder="0"></iframe>
+
+<style>
+
+    body{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        flex-direction: column;
+       margin: 0;
+       padding: 0;
+       box-sizing: border-box;
+       background-color: bisque;
+       
+       }
+
+  
+    .container{
+        display: flex;
+        background-color: antiquewhite;
+        width: 450px;
+        height: 450px;
+        border-radius: 25px;
+        box-shadow: black 10px 20px 18px;
+        border: 1px solid gray;
+        align-content: center;
+        justify-content: center;
+        transition: 1s ease;
+        flex-direction: column;
+        margin-top: 150px;
+        }
+
+    .autor{
+        position: relative;
+        width: 80%;
+        height: 10%;
+        text-align: center;
+        font-size: 30px;
+        color: gray;
+        transition: 1s ease;
+        margin-top: 15px;
+        margin-bottom: 100px;
+        margin-left: 10%;
+        
+        }
+
+        .quotebox{
+             width: 90%;
+             margin-top: 15px;
+            height: 100px;
+        font-size: 20px;
+        color: gray;
+        font-weight: bold;
+        transition: 1s ease;
+        text-indent: 15%;
+        
+        margin-left: 5%
+        ;
+            }
+
+            button{
+                height: 10%;
+                width: 45%;
+                outline: none;
+                border: 1px solid gray;
+                background-color: antiquewhite;
+                border-radius: 25px;
+                font-weight: bold;
+                cursor: pointer;
+                align-self: center;
+                justify-self: center;
+                margin-bottom: 25px
+                
+            }
+            button:hover{
+                background-color: cadetblue;
+            }
+
+            img{
+                position: relative;
+                margin-left: 20px;
+                top: 25px;
+                display: none;
+                width: 45px;
+                height: 45px;
+            }
+
+            iframe{
+                margin-top: 100px;
+                width: 800px;
+                height: 700px;
+            }
+            h1{
+                margin-top: 100px;
+                display: none;
+            }
+            @media screen and (max-width: 815px) {
+
+            .container{
+                width: 300px;
+                height: 300px;
+            }
+            button{
+                margin-bottom: 10px;
+                margin-top: 10px;
+                position: relative;
+                
+                
+            }
+
+            .autor{
+                margin-top: 5px;
+                font-size: 20px;
+                }
+            .quotebox{
+                font-size: 15px;
+                 margin-top: 0px;
+                margin-bottom: 0;
+                text-indent: 15%;
+            }
+
+            img{
+                 width: 25px;
+                 height: 25px;
+                margin-bottom: 15px;
+                margin-left: 25px;
+            }
+
+            iframe{
+                margin-top: 15px;
+                width: 300px;
+                height: 400px;
+
+            }
+            }
+           
+</style>
+
+<script>
+
+
+var life = {
+quote: "Life is too short and sweet to be spent by cribbing and complaining about things. Here are some random quotes about the most wonderful gift that we've got.",
+author: "Life",
+who: "https://wikipedia.org/wiki/Life" }
+
+var john = {
+quote: "Humor is richly rewarding to the person who employs it. It has some value in gaining and holding attention. But it has no persuasive value at all.",
+author: "John Kenneth Galbraith",
+who: "https://pt.wikipedia.org/wiki/John_Kenneth_Galbraith"}
+
+var claude = { quote: "God save me from my friends. I can protect myself from my enemies.",
+author: "Claude Louis Hector de Villars",
+who: "https://wikipedia.org/wiki/Claude_Louis_Hector_de_Villars"}
+
+var turou = {
+quote: "The price of anything is the amount of life you exchange for it.",
+author: "David Thoreau",
+who: "https://wikipedia.org/wiki/Henry_David_Thoreau"}
+
+var lind = { quote: "Life is like a landscape. You live in the midst of it but can describe it only from the vantage point of distance. ",
+author: "Charles Lindbergh",
+who: "https://wikipedia.org/wiki/Charles_Lindbergh"}
+
+var tyne = { quote: "A critic is someone who never actually goes to the battle, yet who afterwards comes out shooting the wounded.",
+author: "Tyne Daly",
+who: "https://en.wikipedia.org/wiki/Tyne_Daly"}
+
+
+
+
+
+function quotation(){
+
+    const quotes = [life, john, claude, turou, lind, tyne]
+
+    const picker = quotes[Math.floor(Math.random() * quotes.length)];
+
+    var text = document.getElementById("text");
+    var autor = document.getElementById("autor");
+    var who = document.getElementById("who");
+    
+    text.innerHTML = picker["quote"]
+    autor.innerHTML = picker["author"]
+    who.src = picker["who"]
+
+
+    console.log("Esse randomizador de citações foi escrito por Victor Gutierrez e idealizado pela JSBegginers")
+    
+    document.getElementById("quotemark").style = "display: flex;"
+    document.getElementById("h1").style = "display: flex;"
+}
+
+
+
+
+
+
+
+
+</script>
+
+
+
+</body>
+</html>
